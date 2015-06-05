@@ -218,7 +218,7 @@ hash -r
 # install cgat environment
 conda update -q conda --yes
 conda info -a
-conda create -q -n $CONDA_INSTALL_TYPE $CONDA_INSTALL_TYPE --override-channels --channel https://conda.binstar.org/cgat --channel defaults --channel https://conda.binstar.org/r --channel https://conda.binstar.org/asmeurer --yes
+conda create -q -n $CONDA_INSTALL_TYPE $CONDA_INSTALL_TYPE gcc=4.8.3 --override-channels --channel https://conda.binstar.org/cgat --channel defaults --channel https://conda.binstar.org/r --channel https://conda.binstar.org/asmeurer --yes
 
 # if installation is 'devel' (outside of travis), checkout latest version from github
 if [ "$OS" != "travis" ] ; then
@@ -497,7 +497,7 @@ echo " On the other hand, if you are looking for other advanced installation opt
 echo " https://www.cgat.org/downloads/public/cgat/documentation/CGATInstallation.html"
 echo 
 echo " To test the installation:"
-echo " ./install-CGAT-tools.sh --test [--location <path/to/folder>]"
+echo " ./install-CGAT-tools.sh --test [--location </full/path/to/folder/without/trailing/slash>]"
 echo
 echo " To update the Conda packages:"
 echo " ./install-CGAT-tools.sh --update [--location <path/to/folder>]"
